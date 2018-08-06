@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:map_caster"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="MapCaster-Map" 
+        WindowState="Maximized">
 
-    <Canvas>
-        
-    </Canvas>
+    <Grid>
+        <Image
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Loaded="Image_Loaded"/>
+    </Grid>
 </Window>

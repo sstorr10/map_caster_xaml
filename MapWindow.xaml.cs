@@ -14,22 +14,33 @@ using System.Windows.Shapes;
 
 namespace map_caster
 {
+
+    
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
     public partial class MapWindow : Window
     {
+        string default_image_path = @"C:\Users\chou-shinka\Google Drive\D&D\DM-Material\Maps\Purchased_maps\redbrand-hideout.png";
+
         public MapWindow()
         {
             InitializeComponent();
-
-            // Create a canvas sized to fill the window
-            Canvas myCanvas = new Canvas();
-            myCanvas.Background = Brushes.LightSteelBlue;
-
-            this.Content = myCanvas;
-            this.Title = "Canvas Sample";
             this.Show();
+        }
+
+        private void Image_Loaded(object sender, RoutedEventArgs e)
+        {
+            // ... Create a new BitmapImage.
+            BitmapImage b = new BitmapImage();
+            b.BeginInit();
+            b.UriSource = new Uri(default_image_path);
+            b.EndInit();
+
+            // ... Get Image reference from sender.
+            var image = sender as Image;
+            // ... Assign Source.
+            image.Source = b;
         }
     }
 }
